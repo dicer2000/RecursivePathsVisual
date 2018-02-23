@@ -26,8 +26,8 @@ window.addEventListener("resize", assessWindow);
 //--------------------------------------------
 
 // Simulation Constants
-var ROW_MAX = 4;
-var COL_MAX = 4;
+var ROW_MAX = 10;
+var COL_MAX = 10;
 var FREE_SPACE = 80;
 
 var board = [COL_MAX];
@@ -87,12 +87,8 @@ function CountPaths(row, col) {
 	// check to see if we can move down
     if (row < ROW_MAX-1 && board[row + 1][col] == ' ')
     {
-        var newPathCount = CountPaths(row + 1, col);
-        if(newPathCount > 0)
-        {
-            makeLine(row, col, row + 1, col);
-            paths += newPathCount;
-        }
+        makeLine(row, col, row + 1, col);
+        paths += CountPaths(row + 1, col);
     }
 
 	// check to see if we can move to the right
@@ -101,6 +97,7 @@ function CountPaths(row, col) {
         makeLine(row, col, row, col + 1);
 		paths += CountPaths(row, col + 1);
     }
+
 
 	// this should be the number of paths to the destination from the current position
 	return paths;
