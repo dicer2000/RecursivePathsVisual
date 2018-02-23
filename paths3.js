@@ -124,7 +124,7 @@ function makeLine(rowStart, colStart, rowEnd, colEnd) {
 
 startSim();
 drawBoard();
-var totalPaths = CountPaths(0, 0);
+var totalPaths = CountPaths(0, 0) + " Paths";;
 
 // Print final paths
 ctx.beginPath();
