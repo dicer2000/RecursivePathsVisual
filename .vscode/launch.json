@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome",
-            "url": "file:///Users/brett/Documents/Personal/Job/PrincipiaCollege/Paths3/Paths3.html",
+            "url": "file:///Users/brett/Documents/Personal/Job/PrincipiaCollege/Paths3/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

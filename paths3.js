@@ -120,8 +120,6 @@ function makeLine(rowStart, colStart, rowEnd, colEnd) {
     ctx.stroke();
 }
 
-
-
 startSim();
 drawBoard();
 var totalPaths = CountPaths(0, 0) + " Paths";;
