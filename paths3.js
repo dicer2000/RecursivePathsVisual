@@ -128,3 +128,4 @@ var totalPaths = CountPaths(0, 0) + " Paths";;
 ctx.beginPath();
 ctx.font = "70px Arial";
 ctx.fillText(totalPaths, 20, 80);
+
