@@ -9,19 +9,6 @@ var cvsW;
 var cvsH;
 var simTick = false;
 
-function assessWindow() {
-    // Make it visually fill the positioned parent
-    cvs.style.width ='100%';
-    cvs.style.height='100%';
-    // ...then set the internal size to match
-    cvs.width  = cvs.offsetWidth;
-    cvs.height = cvs.offsetHeight;
-    cvsW = cvs.width;
-    cvsH = cvs.height;
-}
-assessWindow();
-window.addEventListener("resize", assessWindow);
-
 // End Window Setup
 //--------------------------------------------
 
@@ -117,12 +104,27 @@ function makeLine(rowStart, colStart, rowEnd, colEnd) {
     ctx.stroke();
 }
 
-startSim();
-drawBoard();
-var totalPaths = CountPaths(0, 0) + " Paths";;
+function assessWindow() {
+    // Make it visually fill the positioned parent
+    cvs.style.width ='100%';
+    cvs.style.height='100%';
+    // ...then set the internal size to match
+    cvs.width  = cvs.offsetWidth;
+    cvs.height = cvs.offsetHeight;
+    cvsW = cvs.width;
+    cvsH = cvs.height;
 
-// Print final paths
-ctx.beginPath();
-ctx.font = "70px Arial";
-ctx.fillText(totalPaths, 20, 80);
+    // Start drawing and computing everything
+    startSim();
+    drawBoard();
+    var totalPaths = CountPaths(0, 0) + " Paths";;
+    
+    // Print final paths
+    ctx.beginPath();
+    ctx.font = "70px Arial";
+    ctx.fillText(totalPaths, 20, 80);
+}
+assessWindow();
+window.addEventListener("resize", assessWindow);
+
 
